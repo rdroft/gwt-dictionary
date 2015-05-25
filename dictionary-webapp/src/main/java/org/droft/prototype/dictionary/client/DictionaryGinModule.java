@@ -1,7 +1,6 @@
 package org.droft.prototype.dictionary.client;
 
 import com.google.gwt.inject.client.AbstractGinModule;
-import org.droft.prototype.dictionary.client.common.ActivityModule;
 import org.droft.prototype.dictionary.client.common.MvpModule;
 
 /**
@@ -10,7 +9,6 @@ import org.droft.prototype.dictionary.client.common.MvpModule;
 public class DictionaryGinModule extends AbstractGinModule {
     @Override
     protected void configure() {
-        install(new ActivityModule());
         install(new MvpModule());
     }
 }

@@ -11,10 +11,10 @@
     </ui:style>
 <b:Panel>
     <b:PanelHeader>
-        <b:Heading size="H3" text="Panel"/>
+        <b:Heading size="H3" text="Panel should be ok"/>
     </b:PanelHeader>
     <b:PanelBody>
-    <g:TextArea ui:field="textArea"></g:TextArea>
+
     </b:PanelBody>
 </b:Panel>
 

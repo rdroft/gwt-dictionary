@@ -1,5 +1,7 @@
 package org.droft.prototype.dictionary.client.common;
 
+import com.google.gwt.activity.shared.ActivityManager;
+import com.google.gwt.activity.shared.ActivityMapper;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.event.shared.SimpleEventBus;
 import com.google.gwt.inject.client.AbstractGinModule;
@@ -9,6 +11,8 @@ import com.google.gwt.place.shared.PlaceHistoryMapper;
 import com.google.inject.Provides;
 import com.google.inject.Singleton;
 import org.droft.prototype.dictionary.client.model.DictionaryServiceAsync;
+import org.droft.prototype.dictionary.client.ui.search.DefaultSearchView;
+import org.droft.prototype.dictionary.client.ui.search.SearchView;
 
 /**
  * Created by rdroft on 5/24/15.
@@ -19,6 +23,8 @@ public class MvpModule extends AbstractGinModule {
         bind(EventBus.class).to(SimpleEventBus.class).in(Singleton.class);
         bind(PlaceHistoryMapper.class).to(AppPlaceHistoryMapper.class).in(Singleton.class);
         bind(DictionaryServiceAsync.class).in(Singleton.class);
+        bind(ActivityMapper.class).to(MainActivityMapper.class).in(Singleton.class);
+        bind(SearchView.class).to(DefaultSearchView.class).in(Singleton.class);
     }
 
 
@@ -56,5 +62,12 @@ public class MvpModule extends AbstractGinModule {
         return new PlaceController(eventBus);
     }
 
+
+
+    @Provides
+    @Singleton
+    public ActivityManager getActivityManager(ActivityMapper activityMapper,EventBus eventBus){
+        return new ActivityManager(activityMapper, eventBus);
+    }
 
 }
