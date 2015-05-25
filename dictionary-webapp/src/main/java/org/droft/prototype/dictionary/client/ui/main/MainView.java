@@ -1,32 +1,34 @@
-package org.droft.prototype.dictionary.client.ui;
+package org.droft.prototype.dictionary.client.ui.main;
 
 import com.google.gwt.activity.shared.ActivityManager;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
-import com.google.gwt.user.cellview.client.DataGrid;
-import com.google.gwt.user.client.ui.Composite;
-import com.google.gwt.user.client.ui.SimplePanel;
-import com.google.gwt.user.client.ui.TextArea;
-import com.google.gwt.user.client.ui.Widget;
-import com.google.gwt.view.client.ProvidesKey;
+import com.google.gwt.user.client.ui.*;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import org.droft.prototype.dictionary.client.activity.MainActivityMapper;
+import org.droft.prototype.dictionary.client.common.MainActivityMapper;
 import org.droft.prototype.dictionary.client.model.DictionaryServiceAsync;
 import org.droft.prototype.dictionary.model.DictionaryReducedEntry;
 import org.fusesource.restygwt.client.Method;
 import org.fusesource.restygwt.client.MethodCallback;
-import org.gwtbootstrap3.client.ui.Label;
 
 import java.util.List;
 
 @Singleton
-public class MainView extends Composite {
+public class MainView extends Composite implements AcceptsOneWidget {
 
     private static MainViewUiBinder uiBinder = GWT
             .create(MainViewUiBinder.class);
+
+
+    IsWidget content;
+    @Override
+    public void setWidget(IsWidget isWidget) {
+          this.content = isWidget;
+    }
+
 
     interface MainViewUiBinder extends UiBinder<Widget, MainView> {
     }
@@ -41,7 +43,7 @@ public class MainView extends Composite {
         serviceAsync.getEntries(new MethodCallback<List<DictionaryReducedEntry>>() {
             @Override
             public void onFailure(Method method, Throwable throwable) {
-
+                SimplePanel s;
             }
 
             @Override
@@ -52,7 +54,5 @@ public class MainView extends Composite {
 
         initWidget(uiBinder.createAndBindUi(this));
         ActivityManager mainActivityManager = new ActivityManager(mainActivityMapper, eventBus);
-
-        //mainActivityManager.setDisplay(mainDisplayPanel);
     }
 }

@@ -1,4 +1,4 @@
-package org.droft.prototype.dictionary.client.activity;
+package org.droft.prototype.dictionary.client.common;
 
 import com.google.gwt.inject.client.AbstractGinModule;
 
@@ -8,7 +8,5 @@ import com.google.gwt.inject.client.AbstractGinModule;
 public class ActivityModule extends AbstractGinModule {
     @Override
     protected void configure() {
-        bind(MainActivity.class);
-        bind(SecondActivity.class);
     }
 }

@@ -1,4 +1,4 @@
-package org.droft.prototype.dictionary.client.places;
+package org.droft.prototype.dictionary.client.common;
 
 import com.google.gwt.place.shared.PlaceHistoryMapper;
 import com.google.gwt.place.shared.WithTokenizers;
