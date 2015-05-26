@@ -12,6 +12,7 @@ import com.google.inject.Provides;
 import com.google.inject.Singleton;
 import org.droft.prototype.dictionary.client.model.DictionaryServiceAsync;
 import org.droft.prototype.dictionary.client.ui.search.DefaultSearchView;
+import org.droft.prototype.dictionary.client.ui.search.SearchPlace;
 import org.droft.prototype.dictionary.client.ui.search.SearchView;
 
 /**
@@ -43,7 +44,7 @@ public class MvpModule extends AbstractGinModule {
                                                  PlaceHistoryMapper historyMapper,
                                                  EventBus eventBus) {
         PlaceHistoryHandler historyHandler =  new PlaceHistoryHandler(historyMapper);
-        historyHandler.register(placeController, eventBus, new DefaultPlace());
+        historyHandler.register(placeController, eventBus, new SearchPlace(""));
         return historyHandler;
     }
 

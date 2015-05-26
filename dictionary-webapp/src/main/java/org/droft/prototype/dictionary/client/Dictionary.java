@@ -1,7 +1,5 @@
 package org.droft.prototype.dictionary.client;
 
-import com.google.gwt.activity.shared.ActivityManager;
-import com.google.gwt.activity.shared.ActivityMapper;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.ui.RootPanel;
@@ -22,6 +20,7 @@ public class Dictionary implements EntryPoint {
         injector.getActivityManager().setDisplay(injector.getMainAppView());
         RootPanel.get().add(injector.getMainAppView());
         injector.getPlaceHistoryHandler().handleCurrentHistory();
+
 
     }
 

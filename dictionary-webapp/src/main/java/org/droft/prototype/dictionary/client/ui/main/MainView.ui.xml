@@ -6,15 +6,13 @@
              xmlns:b='urn:import:org.gwtbootstrap3.client.ui'
              xmlns:b.html='urn:import:org.gwtbootstrap3.client.ui.html'>
 
-    <ui:style>
-        /* Add CSS here. See the GWT docs on UI Binder for more details */
-    </ui:style>
+
 <b:Panel>
     <b:PanelHeader>
-        <b:Heading size="H3" text="Panel should be ok"/>
+        <b:Heading size="H3" text="Panel"/>
     </b:PanelHeader>
     <b:PanelBody>
-
+       <g:SimplePanel ui:field="panel"></g:SimplePanel>
     </b:PanelBody>
 </b:Panel>
 
