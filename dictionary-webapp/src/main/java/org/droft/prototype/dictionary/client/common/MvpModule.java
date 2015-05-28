@@ -2,8 +2,8 @@ package org.droft.prototype.dictionary.client.common;
 
 import com.google.gwt.activity.shared.ActivityManager;
 import com.google.gwt.activity.shared.ActivityMapper;
-import com.google.gwt.event.shared.EventBus;
-import com.google.gwt.event.shared.SimpleEventBus;
+import com.google.web.bindery.event.shared.EventBus;
+import com.google.web.bindery.event.shared.SimpleEventBus;
 import com.google.gwt.inject.client.AbstractGinModule;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.gwt.place.shared.PlaceHistoryHandler;
@@ -11,8 +11,9 @@ import com.google.gwt.place.shared.PlaceHistoryMapper;
 import com.google.inject.Provides;
 import com.google.inject.Singleton;
 import org.droft.prototype.dictionary.client.model.DictionaryServiceAsync;
+import org.droft.prototype.dictionary.client.ui.addnew.AddNewView;
+import org.droft.prototype.dictionary.client.ui.addnew.DefaultAddNewView;
 import org.droft.prototype.dictionary.client.ui.search.DefaultSearchView;
-import org.droft.prototype.dictionary.client.ui.search.SearchPlace;
 import org.droft.prototype.dictionary.client.ui.search.SearchView;
 
 /**
@@ -26,6 +27,7 @@ public class MvpModule extends AbstractGinModule {
         bind(DictionaryServiceAsync.class).in(Singleton.class);
         bind(ActivityMapper.class).to(MainActivityMapper.class).in(Singleton.class);
         bind(SearchView.class).to(DefaultSearchView.class).in(Singleton.class);
+        bind(AddNewView.class).to(DefaultAddNewView.class).in(Singleton.class);
     }
 
 
@@ -44,7 +46,7 @@ public class MvpModule extends AbstractGinModule {
                                                  PlaceHistoryMapper historyMapper,
                                                  EventBus eventBus) {
         PlaceHistoryHandler historyHandler =  new PlaceHistoryHandler(historyMapper);
-        historyHandler.register(placeController, eventBus, new SearchPlace(""));
+        historyHandler.register(placeController, eventBus, new DefaultPlace());
         return historyHandler;
     }
 

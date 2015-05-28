@@ -1,0 +1,7 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+    <g:HTMLPanel>
+         <g:RichTextArea ui:field="someArea"></g:RichTextArea>
+        <g:Button ui:field="goToSearch" text="goTo Search"></g:Button>
+    </g:HTMLPanel>
+</ui:UiBinder>

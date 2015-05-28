@@ -1,7 +1,6 @@
 package org.droft.prototype.dictionary.client.ui.search;
 
 import com.google.gwt.activity.shared.AbstractActivity;
-import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.google.inject.Inject;
 import org.droft.prototype.dictionary.client.model.DictionaryServiceAsync;
@@ -22,7 +21,7 @@ public class SearchActivity extends AbstractActivity {
     DictionaryServiceAsync dictionaryService;
 
     @Override
-    public void start(AcceptsOneWidget panel, EventBus eventBus) {
+    public void start(AcceptsOneWidget panel, com.google.gwt.event.shared.EventBus eventBus) {
          dictionaryService.getEntries(new DictionaryCallbacks());
          panel.setWidget(searchView);
     }

@@ -2,7 +2,10 @@ package org.droft.prototype.dictionary.client.common;
 
 import com.google.gwt.activity.shared.Activity;
 import com.google.gwt.activity.shared.ActivityMapper;
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.place.shared.Place;
+import org.droft.prototype.dictionary.client.ui.addnew.AddNewActivity;
+import org.droft.prototype.dictionary.client.ui.addnew.AddNewPlace;
 import org.droft.prototype.dictionary.client.ui.search.SearchActivity;
 import org.droft.prototype.dictionary.client.ui.search.SearchPlace;
 
@@ -14,18 +17,26 @@ import javax.inject.Provider;
  */
 public class MainActivityMapper implements ActivityMapper{
     Provider<SearchActivity> searchActivityProvider;
+    Provider<AddNewActivity> addNewActivityProvider;
+
     @Inject
-    MainActivityMapper(Provider<SearchActivity> searchActivityProvider){
+    MainActivityMapper(Provider<SearchActivity> searchActivityProvider,Provider<AddNewActivity> addNewActivityProvider){
         this.searchActivityProvider = searchActivityProvider;
+        this.addNewActivityProvider = addNewActivityProvider;
     }
 
     @Override
     public Activity getActivity(Place place) {
+        GWT.log("getActivity for "+place.getClass());
         if(place instanceof DefaultPlace){
             return searchActivityProvider.get();
         }if(place instanceof SearchPlace){
             return searchActivityProvider.get();
+        }if (place instanceof AddNewPlace){
+            GWT.log("addNewAcrivity returned");
+            return  addNewActivityProvider.get();
         }
+        GWT.log("Activity on found");
         return null;
     }
 }

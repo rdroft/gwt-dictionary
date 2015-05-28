@@ -1,7 +1,6 @@
 package org.droft.prototype.dictionary.client.ui.main;
 
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.*;
@@ -24,7 +23,12 @@ public class MainView extends Composite implements AcceptsOneWidget {
 //
     @Override
     public void setWidget(IsWidget isWidget) {
-        panel.setWidget(isWidget.asWidget());
+        if(isWidget!=null) {
+            panel.setWidget(isWidget.asWidget());
+        }else{
+            GWT.log("WIDGED IS NULL");
+            panel.setWidget(null);
+        }
     }
 
 
@@ -35,7 +39,7 @@ public class MainView extends Composite implements AcceptsOneWidget {
 
     @Inject
     public MainView(MainActivityMapper mainActivityMapper,
-                    EventBus eventBus,DictionaryServiceAsync serviceAsync) {
+                   DictionaryServiceAsync serviceAsync) {
         initWidget(uiBinder.createAndBindUi(this));
     }
 }
