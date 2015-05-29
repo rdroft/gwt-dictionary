@@ -1,0 +1,27 @@
+<ui:UiBinder
+        xmlns:g="urn:import:com.google.gwt.user.client.ui"
+        xmlns:c='urn:import:com.google.gwt.user.cellview.client'
+        xmlns:ui='urn:ui:com.google.gwt.uibinder'
+        xmlns:b='urn:import:org.gwtbootstrap3.client.ui'
+        xmlns:b.html='urn:import:org.gwtbootstrap3.client.ui.html'>
+    <ui:style>
+
+    </ui:style>
+    <b:Container fluid="true">
+        <b:Row>
+            <b:Column size="MD_6">
+                <b:Form>
+                    <b:FieldSet>
+                        <b:FormGroup>
+                            <b:FormLabel for="country">Country</b:FormLabel>
+                            <b:SuggestBox ui:field="country" />
+                        </b:FormGroup>
+                    </b:FieldSet>
+                </b:Form>
+            </b:Column>
+            <b:Column size="MD_6">
+
+            </b:Column>
+        </b:Row>
+    </b:Container>
+</ui:UiBinder>

@@ -26,7 +26,6 @@ public class MainView extends Composite implements AcceptsOneWidget {
         if(isWidget!=null) {
             panel.setWidget(isWidget.asWidget());
         }else{
-            GWT.log("WIDGED IS NULL");
             panel.setWidget(null);
         }
     }

@@ -11,7 +11,7 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.RichTextArea;
 import com.google.inject.Inject;
-import org.droft.prototype.dictionary.client.ui.search.SearchPlace;
+import org.droft.prototype.dictionary.client.places.SearchPlace;
 
 /**
  * Created by rpashniev on 27.05.2015.

@@ -9,7 +9,6 @@
     <source path='client' />
     <inherits name='org.gwtbootstrap3.GwtBootstrap3'/>
     <!--For SDM-->
-    <add-linker name="xsiframe"/>
     <set-configuration-property name="devModeRedirectEnabled" value="true"/>
     <!--bt configuration-->
     <inherits name="org.gwtbootstrap3.extras.respond.Respond"/>
@@ -17,6 +16,9 @@
     <inherits name="com.google.gwt.inject.Inject"/>
     <inherits name="com.google.gwt.place.Place"/>
     <inherits name="com.google.gwt.activity.Activity"/>
-
     <inherits name="com.google.gwt.logging.Logging"/>
+
+    <!--dev-->
+    <set-configuration-property name="gwt.superdevmode" value="on" />
+
 </module>
