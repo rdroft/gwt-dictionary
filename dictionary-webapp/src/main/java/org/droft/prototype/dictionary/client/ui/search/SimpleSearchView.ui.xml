@@ -10,14 +10,14 @@
     <b:Container fluid="true">
         <b:Row>
             <b:Column size="MD_6">
-                <b:Form>
+
                     <b:FieldSet>
                         <b:FormGroup>
-                            <b:FormLabel for="country">Country</b:FormLabel>
-                            <b:SuggestBox ui:field="country" />
+                            <b:FormLabel for="wordSearch">Word</b:FormLabel>
+                            <b:SuggestBox ui:field="wordSearch" />
                         </b:FormGroup>
                     </b:FieldSet>
-                </b:Form>
+
             </b:Column>
             <b:Column size="MD_6">
 

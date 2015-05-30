@@ -7,6 +7,7 @@
     <entry-point class='org.droft.prototype.dictionary.client.Dictionary'/>
     <set-property name="user.agent" value="safari"/>
     <source path='client' />
+    <source path="components"></source>
     <inherits name='org.gwtbootstrap3.GwtBootstrap3'/>
     <!--For SDM-->
     <set-configuration-property name="devModeRedirectEnabled" value="true"/>
